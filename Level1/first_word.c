@@ -36,23 +36,21 @@ void	putchar_aux(char c)
 int	main(int argc, char **argv)
 {
 	int	i;
-
 	char *s1 = argv[1];
 
 	i = 0;
 	if (argc == 1 || argc > 2)
-		write(1,"\n", 1);
-
+		putchar_aux('\n');
 	else if (argc == 2)
 	{
-		while (s1[i])
+		while (s1[i]== ' ' || s1[i] == '\t')
+			i++;
+		while (s1[i] != '\0' && s1[i] != ' ' && s1[i] != '\t')
 		{
-			if (s1[i] != 32)
-				putchar_aux(s1[i]);
-			else 
-				return (0);
+			putchar_aux(s1[i]);
 			i++;
 		}
+		putchar_aux('\n');
 	}
 	return (0);
 }
