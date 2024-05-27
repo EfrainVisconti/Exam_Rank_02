@@ -19,34 +19,18 @@
 //      \/
 //  1000  0010
 
-// unsigned char	reverse_bits(unsigned char octet)
-// {
-// 	int		i = 7;
-// 	unsigned char	res = 0;
+unsigned char	reverse_bits(unsigned char octet)
+{
+	int		i = 7;
+	unsigned char	res = 0;
 
-// 	while (i >= 0)
-// 	{
-// 		res = res * 2 + (octet % 2);
-// 		octet = octet / 2;
-// 		i--;
-// 	}
-// 	return (res);
-// }
-
-unsigned char	reverse_bits(unsigned char octet) {
-    unsigned char	reversed;
-    int	i;
-
-    reversed = 0;
-	i = 0;
-    while (i < 8) {
-        reversed <<= 1;           // Shift the result to the left to make room for the next bit
-        reversed |= (octet & 1);  // Add the least significant bit of octet to reversed
-        octet >>= 1;              // Shift octet to the right to process the next bit
-        i++;                      // Increment the loop counter
-    }
-    
-    return reversed;
+	while (i >= 0)
+	{
+		res = res * 2 + (octet % 2);
+		octet = octet / 2;
+		i--;
+	}
+	return (res);
 }
 
 #include <unistd.h> 
