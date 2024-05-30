@@ -42,12 +42,12 @@ char    *ft_strrev(char *str)
 	return (str);
 }
 
-// #include <stdio.h>
-// int	main(int argc, char **argv)
-// {
-// 	if (argc == 2)
-// 	{
-// 		printf("%s\n", argv[1]);
-// 		printf("%s\n", ft_strrev(argv[1]));
-// 	}
-// }
+#include <stdio.h>
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+		printf("%s\n", argv[1]);
+		printf("%s\n", ft_strrev(argv[1]));
+	}
+}
