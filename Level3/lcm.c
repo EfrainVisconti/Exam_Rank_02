@@ -29,18 +29,25 @@
 
 unsigned int    lcm(unsigned int a, unsigned int b)
 {
-		unsigned int	lcm;
+	unsigned int	aux;
 
-	if ((a == 0) || (b == 0))
-		return (0);
+	if (a == 0 || b == 0)
+	 return (0);
 	if (a > b)
-		lcm = a;
+		aux = a;
 	else
-		lcm = b;
+		aux = b;
 	while (1)
 	{
-		if (((lcm % a) == 0) && ((lcm % b) == 0))
-			return (lcm);
-		++lcm;
+		if (((aux % a) == 0) && ((aux % b) == 0))
+			break;
+		aux++;
 	}
+	return (aux);
+}
+
+#include <stdio.h>
+int	main()
+{
+	printf("%u\n", lcm(15, 5));
 }
