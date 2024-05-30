@@ -38,6 +38,7 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	{
 		temp = *begin_list;
 		(*begin_list) = (*begin_list)->next;
+		free(temp);
 		ft_list_remove_if(begin_list, data_ref, cmp);
 	}
 	else
