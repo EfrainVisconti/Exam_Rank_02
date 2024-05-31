@@ -20,20 +20,3 @@ void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = tmp;
 }
-
-#include <stdio.h>
-int	main(void)
-{
-	int	x;
-	int	y;
-
-	x = 10;
-	y = 20;
-	printf("%d, %d\n", x, y);
-	ft_swap(&x, &y);
-	printf("%d, %d\n", x, y);
-	printf("NULL SWAP\n");
-	ft_swap(NULL, &y);
-	printf("%d, %d", x, y);
-	return (0);
-}

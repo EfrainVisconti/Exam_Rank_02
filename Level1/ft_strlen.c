@@ -18,15 +18,3 @@ int		ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char	*str;
-// 	int	i;
-
-// 	str = "0123456789";
-// 	i = ft_strlen(str);
-// 	printf("%d ", i);
-// 	return (0);
-// }

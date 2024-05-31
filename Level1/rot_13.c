@@ -40,8 +40,6 @@ void	rot13(char c, int n)
 	write(1,&new,1);
 }
 
-
-
 int	main(int argc, char **argv)
 {
 	int	i;

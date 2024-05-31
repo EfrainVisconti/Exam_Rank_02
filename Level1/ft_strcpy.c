@@ -22,18 +22,3 @@ char	*ft_strcpy(char	*s1, char *s2)
 	s1[i] = '\0';
 	return (s1);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char	src[15] = "Hola Mundo!";
-// 	char	dst[15] = "";
-
-// 	printf("%s", src);
-// 	printf("\n");
-// 	printf("%s", dst);
-// 	printf("\n");
-// 	ft_strcpy(dst, src);
-// 	printf("%s", dst);
-// 	return (0);
-// }
