@@ -31,26 +31,29 @@
 // 	return (a <= b);
 // }
 
-#include "list.h"
+typedef struct s_list
+{
+	int				data;
+	struct s_list	*next;
+}	t_list;
 
 t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
-	t_list *tmp;
-	int swap;
+	int	tmp;
+	t_list *aux;
 
-	tmp = lst;
+	aux = lst;
 	while (lst->next != 0)
 	{
-		if ((*cmp)(lst->data, lst->next->data) == 0)
+		if (cmp(lst->data, lst->next->data) == 0)
 		{
-			swap = lst->data;
+			tmp = lst->data;
 			lst->data = lst->next->data;
-			lst->next->data = swap;
-			lst = tmp;
+			lst->next->data = tmp;
+			lst = aux;
 		}
 		else
 			lst = lst->next;
 	}
-	lst = tmp;
 	return (lst);
 }
