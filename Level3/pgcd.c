@@ -24,31 +24,31 @@
 // $> ./pgcd | cat -e
 // $
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
-void	ft_pgcd(int nbr_1, int nbr_2)
-{
-	int	div;
-	int	pgcd;
-
-	div = 1;
-	if (nbr_1 <= 0 || nbr_2 <= 0)
-		return ;
-	while ((div <= nbr_1) || div <= nbr_2)
-	{
-		if (((nbr_1 % div) == 0) && ((nbr_2 % div) == 0))
-			pgcd = div;
-		div++;
-	}
-	printf("%d", pgcd);
-}
-
 int	main(int argc, char **argv)
 {
+	int	a;
+	int	b;
+	int	gcd;
+
 	if (argc == 3)
-		ft_pgcd(atoi(argv[1]), atoi(argv[2]));
+	{
+		a = atoi(argv[1]);
+		b = atoi(argv[2]);
+		if (a > b)
+			gcd = b;
+		else
+			gcd = a;
+		while (gcd >= 1)
+		{
+			if ((a % gcd == 0) && (b % gcd == 0))
+				break;
+			gcd--;
+		}
+		printf("%i",gcd);
+	}
 	printf("\n");
 	return (0);
 }
