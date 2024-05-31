@@ -37,19 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-// #include <stdlib.h>
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	*str = "-25500";
-// 	int	ft;
-// 	int	lb;
-
-// 	ft = ft_atoi(str);
-// 	lb = atoi(str);
-// 	printf("%i\n", ft);
-// 	printf("%i\n", lb);
-// 	return (0);
-// }

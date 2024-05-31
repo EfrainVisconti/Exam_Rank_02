@@ -18,3 +18,4 @@ int    ft_strcmp(char *s1, char *s2)
 		idx++;
 	return ((unsigned char)s1[idx] - (unsigned char)s2[idx]);
 }
+

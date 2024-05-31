@@ -75,27 +75,3 @@ int     *ft_range(int start, int end)
 		array[i] = start;
 	return (array);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	int	*tab;
-// 	int	idx;
-// 	int	start;
-// 	int	end;
-// 	int	size;
-
-// 	idx = 0;
-// 	start = 5;
-// 	end = -5;
-// 	tab = ft_range(start, end);
-// 	size = get_size(start, end);
-// 	printf("%i\n", size);
-// 	while (idx < size)
-// 	{
-// 		printf("%i ", tab[idx]);
-// 		idx++;
-// 	}
-// 	printf("\n");
-// }

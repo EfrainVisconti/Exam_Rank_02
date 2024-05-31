@@ -40,3 +40,4 @@ char   	*ft_strdup(char *src)
 	new[i] = '\0';
 	return (new);
 }
+

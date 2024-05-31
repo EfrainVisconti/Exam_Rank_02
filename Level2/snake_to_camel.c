@@ -20,61 +20,30 @@
 // $>./camel_to_snake | cat -e
 // $
 
-#include <stdlib.h>
 #include <unistd.h>
-
-int	ft_strlen(char *s)
-{
-	int	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-void	ft_putstr(char	*s)
-{
-	int	i = 0;
-	while (s[i] != '\0')
-	{
-		write(1,&s[i],1);
-		i++;
-	}
-}
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int	i = 0;
 	char	*s;
-	char	*n;
+	char	aux;
 
-	i = 0;
-	j = 0;
 	if (argc == 2)
 	{
 		s = argv[1];
-		n = malloc(ft_strlen(s) + 1);
-		if (n == 0)
-			return (0);
-		while (s[i] != '\0')
+		while (s[i] != 0)
 		{
-			if ((s[i] == '_') && s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			if (s[i] == '_')
 			{
-				n[j] = s[i + 1] - 32;
 				i++;
-				i++;
-				j++;
+				aux = s[i] - 32;
+				write(1,&aux,1);
 			}
 			else
-			{
-				n[j] = s[i];
-				i++;
-				j++;
-			}
+				write(1,&s[i],1);
+			i++;
 		}
-		ft_putstr(n);
 	}
 	write(1,"\n",1);
-	free(n);
 	return (0);
 }

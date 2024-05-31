@@ -31,12 +31,3 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	}
 	return (0);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	if (argc == 3)
-// 	{
-// 		printf("%s\n", argv[1]);
-// 		printf("%s\n", ft_strpbrk(argv[1], argv[2]));
-// 	}
-// }

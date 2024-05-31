@@ -28,42 +28,28 @@
 
 #include <unistd.h>
 
-void	printlist(int *lst)
+void	print_list(int *lst)
 {
-	int	i;
-
-	i = 0;
-	while (i < 256)
+	int i = 0;
+	while (lst[i] != 0)
 	{
-		if (lst[i] == 0)
-			return ;
 		write(1,&lst[i],1);
 		i++;
 	}
 }
 
-void	addinlist(int c, int *lst)
+void	add_list(int *lst, int c)
 {
-	int i;
-
-	i = 0;
-	while (i < 256)
-	{
-		if (lst[i] == 0)
-		{
-			lst[i] = c;
-			return ;
-		}
+	int i = 0;
+	while (lst[i] != 0)
 		i++;
-	}
+	lst[i] = c;
 }
 
-int	isinlist(int c, int *lst)
+int	isinlist(int *lst, int c)
 {
-	int	i;
-
-	i = 0;
-	while (i < 256)
+	int i = 0;
+	while (lst[i] != 0)
 	{
 		if (lst[i] == c)
 			return (1);
@@ -72,34 +58,37 @@ int	isinlist(int c, int *lst)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int i;
-	int lst[256] = {0};
+	int	i = 0;
+	int	lst[256];
+	char	*f;
+	char	*s;
 
-	// i = 0;
-	// while (i < 256)
-	// {
-	// 	lst[i] = 0;
-	// 	i++;
-	// }
 	if (argc == 3)
 	{
-		i = 0;
-		while (argv[1][i] != '\0')
+		f = argv[1];
+		s = argv[2];
+		while (i < 256)
 		{
-			if (isinlist(argv[1][i], lst) == 0)
-				addinlist(argv[1][i], lst);	
+			lst[i] = 0;
 			i++;
 		}
 		i = 0;
-		while (argv[2][i] != '\0')
+		while (f[i] != '\0')
 		{
-			if (isinlist(argv[2][i], lst) == 0)
-				addinlist(argv[2][i], lst);
+			if (isinlist(lst, f[i]) == 0)
+				add_list(lst, f[i]);
 			i++;
 		}
-		printlist(lst);
+		i = 0;
+		while (s[i] != '\0')
+		{
+			if (isinlist(lst, s[i]) == 0)
+				add_list(lst, s[i]);
+			i++;
+		}
+		print_list(lst);
 	}
 	write(1,"\n",1);
 	return (0);

@@ -32,30 +32,3 @@ unsigned char	reverse_bits(unsigned char octet)
 	}
 	return (res);
 }
-
-#include <unistd.h> 
- void	print_bits(unsigned char octet)
- {
-	unsigned int	bit;
-	int	i = 7;
-
-	while (i >= 0)
-	{
-		bit = (((octet >> i) & 1) + '0');
-		write(1, &bit, 1);
-		i--;
-	}
- }
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-int	main(void)
-{
-	print_bits(200);
-	ft_putchar('\n');
-	print_bits(reverse_bits(200));
-	ft_putchar('\n');
-}

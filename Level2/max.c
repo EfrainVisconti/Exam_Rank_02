@@ -35,14 +35,3 @@ int	max(int	*tab, unsigned int len)
 	}
 	return (max);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int	res;
-// 	int	tab[6] = {10, 10, 10, 10, 0, 10};
-
-// 	res = max(tab, 6);
-// 	printf("%i\n", res);
-// 	return (0);
-// }

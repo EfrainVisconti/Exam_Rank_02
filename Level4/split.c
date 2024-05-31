@@ -62,19 +62,3 @@ char    **ft_split(char *str)
 	array[row] = 0;
 	return (array);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	int		idx;
-// 	char	**tab;
-
-// 	idx = 0;
-// 	tab = ft_split("    The prophecy i s 	true lol 		   ici");
-// 	while (idx < 7)
-// 	{
-// 		printf("String %d : %s\n", idx, tab[idx]);
-// 		idx++;
-// 	}
-// 	return (0);
-// }

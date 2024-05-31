@@ -45,9 +45,3 @@ unsigned int    lcm(unsigned int a, unsigned int b)
 	}
 	return (aux);
 }
-
-#include <stdio.h>
-int	main()
-{
-	printf("%u\n", lcm(15, 5));
-}
