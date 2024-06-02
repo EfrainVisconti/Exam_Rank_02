@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 		{	
 			if (s[i] >= 33 && s[i] <= 126)
 				write(1,&s[i],1);
-			else if ((s[i] == ' ' || s[i] == '\t') && (s[i+1] >= 33 && s[i+1] <= 126)) // (s[i] != ' ' && s[i] != '\t) && s[i] != '\0')
+			else if ((s[i] == ' ' || s[i] == '\t') && (s[i+1] >= 33 && s[i+1] <= 126))
 				write(1,&s[i],1);
 			i++;
 		}
